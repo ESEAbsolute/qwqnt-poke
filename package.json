@@ -1,0 +1,13 @@
+{
+  "name": "qwqnt-poke-group",
+  "qwqnt": {
+    "name": "群聊戳一戳",
+    "dependencies": {
+      "napcat": "*"
+    }
+  },
+  "napcat": {
+    "host": "http://127.0.0.1:61033",
+    "token": "c4@kmBFg+ErB"
+  }
+}
