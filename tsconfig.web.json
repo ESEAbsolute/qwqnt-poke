@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "types": ["@qwqnt/types/preload", "@qwqnt/types/renderer"],
+        "composite": true,
+        "paths": {
+            "@/src/*": ["./src/*"],
+            "@/package": ["./package.json"]
+        }
+    }
+}

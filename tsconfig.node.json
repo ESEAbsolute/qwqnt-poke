@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "types": ["@qwqnt/types/main"],
+        "composite": true,
+        "paths": {
+            "@/src/*": ["./src/*"],
+            "@/package": ["./package.json"]
+        }
+    }
+}

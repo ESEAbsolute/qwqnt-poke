@@ -1,0 +1,116 @@
+<setting-section>
+    <setting-panel>
+        <setting-list>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>戳一戳发送方式</setting-text>
+                    <setting-text data-type="secondary">选择发送戳一戳使用的底层实现</setting-text>
+                </div>
+                <setting-select id="poke-mode-select">
+                    <setting-option value="native">Native</setting-option>
+                    <setting-option value="napcat">NapCat</setting-option>
+                    <setting-option value="http_api">HTTP API</setting-option>
+                </setting-select>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<!-- NapCat Config Section -->
+<setting-section id="poke-napcat-config-section" style="display: none;">
+    <setting-title>NapCat 参数配置</setting-title>
+    <setting-panel>
+        <setting-list>
+            <setting-item data-direction="column">
+                <setting-text>HTTP 端口</setting-text>
+                <div class="q-input">
+                    <input id="poke-napcat-port" type="text" placeholder="3000" />
+                </div>
+            </setting-item>
+            <setting-item data-direction="column">
+                <setting-text>Token</setting-text>
+                <div class="q-input">
+                    <input id="poke-napcat-token" type="text" placeholder="留空则不使用 Token" />
+                </div>
+            </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>保存 NapCat 配置</setting-text>
+                </div>
+                <setting-button id="poke-save-napcat" data-type="primary">保存</setting-button>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<!-- HTTP API Config Section -->
+<setting-section id="poke-http-config-section" style="display: none;">
+    <setting-title>HTTP API 参数配置</setting-title>
+    <setting-panel>
+        <setting-list>
+            <setting-item data-direction="column">
+                <setting-text>API URL</setting-text>
+                <div class="q-input">
+                    <input id="poke-http-url" type="url" placeholder="http://localhost:3000" />
+                </div>
+            </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>Method</setting-text>
+                    <setting-text data-type="secondary">请求方法</setting-text>
+                </div>
+                <setting-select id="poke-http-method">
+                    <setting-option value="GET">GET</setting-option>
+                    <setting-option value="POST">POST</setting-option>
+                    <setting-option value="PUT">PUT</setting-option>
+                    <setting-option value="DELETE">DELETE</setting-option>
+                </setting-select>
+            </setting-item>
+            <setting-item data-direction="column">
+                <setting-text>Headers (JSON)</setting-text>
+                <div class="q-input">
+                    <input id="poke-http-headers" type="text" placeholder='{ "Content-Type": "application/json" }' />
+                </div>
+            </setting-item>
+            <setting-item data-direction="column">
+                <setting-text>Group Chat Body</setting-text>
+                <div class="q-input">
+                    <input id="poke-http-group-body" type="text" placeholder="{ group_id: <group>, user_id: <target> }" />
+                </div>
+            </setting-item>
+            <setting-item data-direction="column">
+                <setting-text>Private Chat Body</setting-text>
+                <div class="q-input">
+                    <input id="poke-http-private-body" type="text" placeholder="{ user_id: <target> }" />
+                </div>
+            </setting-item>
+            <setting-item data-direction="row">
+                <div>
+                    <setting-text>保存 HTTP API 配置</setting-text>
+                </div>
+                <setting-button id="poke-save-http" data-type="primary">保存</setting-button>
+            </setting-item>
+        </setting-list>
+    </setting-panel>
+</setting-section>
+
+<style>
+    .q-input {
+        margin-top: 8px;
+        width: 100%;
+    }
+
+    .q-input input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 4px;
+        border: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+        background: var(--bg-color, rgba(255, 255, 255, 0.5));
+        color: var(--text-color, inherit);
+    }
+
+    .q-input input:focus {
+        outline: 2px solid var(--brand-standard);
+        border-color: transparent;
+    }
+</style>
